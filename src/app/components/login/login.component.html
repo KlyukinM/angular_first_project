@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="title">
+        <h1>Авторизация</h1>
+    </div>
+    <div class="content_wrapper">
+        <form [formGroup]="login" (ngSubmit)="proceedLogin()">            
+            <input type="text" class="form-control" formControlName="email" placeholder="Введите почту"
+                autocomplete="off" />
+            <input type="password" class="form-control" formControlName="password"
+                placeholder="Введите пароль" autocomplete="off" />   
+            <div class="error" *ngIf="errorMsg">{{errorMsg}}</div>    
+            <div class="error" *ngIf="!errorMsg">{{errorMsg}}</div>         
+            <button type="submit" class="login_button">Войти</button>
+        </form>        
+    </div> 
+    
+</div>

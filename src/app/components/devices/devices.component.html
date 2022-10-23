@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="title">
+        <h1>Список устройств</h1>
+    </div>
+    <button class="logout_button" (click)="logout()">Выйти</button>
+
+    <div class="content_wrapper">
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Дата последней активности</th>
+            </thead>
+            <tbody *ngIf="devices.length">
+                <tr *ngFor="let device of devices">
+                    <td>{{device.id}}</td>
+                    <td>{{device.name}}</td>
+                    <td>{{device.time}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="error" *ngIf="errorMsg">Произошла ошибка: {{errorMsg}}</div>
+</div>
